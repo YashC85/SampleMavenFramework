@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CreateOrgTest {
-	@Test
+	@Test(groups = "smokeTest")
 	public void createOrgTest() {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();

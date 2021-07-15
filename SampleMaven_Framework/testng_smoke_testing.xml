@@ -10,6 +10,7 @@
     <classes>
       <class name="com.crm.vtiger.ProductTest.CreateProductTest"/>
       <class name="com.crm.vtiger.ProductTest.SearchProductTest"/>
+      <class name="com.crm.vtiger.organisation.CreateOrgTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
