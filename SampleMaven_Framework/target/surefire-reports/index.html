@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Command_line_suite">
-              <span class="suite-name border-passed">Command line suite</span>
+              <span class="suite-name border-failed">Command line suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Command_line_suite" class="hide-methods failed suite-Command_line_suite"> (hide)</a> <!-- hide-methods failed suite-Command_line_suite -->
+                      <a href="#" panel-name="suite-Command_line_suite" class="show-methods failed suite-Command_line_suite"> (show)</a> <!-- show-methods failed suite-Command_line_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Command_line_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.crm.vtiger.organisation.CreateOrgTest" hash-for-method="createOrgTest">createOrgTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Command_line_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -132,6 +146,25 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Command_line_suite" class="panel Command_line_suite">
+          <div class="suite-Command_line_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.crm.vtiger.organisation.CreateOrgTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="createOrgTest">
+                  </a> <!-- createOrgTest -->
+                  <span class="method-name">createOrgTest</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.crm.vtiger.organisation.CreateOrgTest.createOrgTest(CreateOrgTest.java:21)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-failed -->
           <div class="suite-Command_line_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -187,6 +220,7 @@
 &lt;suite verbose=&quot;0&quot; name=&quot;Command line suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Command line test&quot;&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;com.crm.vtiger.organisation.CreateOrgTest&quot;/&gt;
       &lt;class name=&quot;com.crm.vtiger.ProductTest.CreateProductTest&quot;/&gt;
       &lt;class name=&quot;com.crm.vtiger.ProductTest.SearchProductTest&quot;/&gt;
     &lt;/classes&gt;
@@ -202,7 +236,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Command line test (2 classes)</span>
+                <span class="test-name">Command line test (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -252,28 +286,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'createProductWithId')
-data.setCell(0, 2, 'com.crm.vtiger.ProductTest.CreateProductTest')
-data.setCell(0, 3, 23);
+data.setCell(0, 1, 'createOrgTest')
+data.setCell(0, 2, 'com.crm.vtiger.organisation.CreateOrgTest')
+data.setCell(0, 3, 22);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'createProductWithNameTest')
-data.setCell(1, 2, 'com.crm.vtiger.ProductTest.CreateProductTest')
+data.setCell(1, 1, 'searchProductWithId')
+data.setCell(1, 2, 'com.crm.vtiger.ProductTest.SearchProductTest')
 data.setCell(1, 3, 3);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'searchProductWithId')
-data.setCell(2, 2, 'com.crm.vtiger.ProductTest.SearchProductTest')
-data.setCell(2, 3, 2);
+data.setCell(2, 1, 'createProductWithNameTest')
+data.setCell(2, 2, 'com.crm.vtiger.ProductTest.CreateProductTest')
+data.setCell(2, 3, 1);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'searchProductWithNameTest')
 data.setCell(3, 2, 'com.crm.vtiger.ProductTest.SearchProductTest')
 data.setCell(3, 3, 1);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'createProductWithId')
+data.setCell(4, 2, 'com.crm.vtiger.ProductTest.CreateProductTest')
+data.setCell(4, 3, 0);
 window.suiteTableData['Command_line_suite']= { tableData: data, tableDiv: 'times-div-Command_line_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 29 ms</span>
+              <span class="suite-total-time">Total running time: 27 ms</span>
               <div id="times-div-Command_line_suite">
               </div> <!-- times-div-Command_line_suite -->
             </div> <!-- times-div -->
@@ -299,25 +337,34 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.vtiger.organisation.CreateOrgTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">createOrgTest</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
               <div class="chronological-class-name">com.crm.vtiger.ProductTest.CreateProductTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">createProductWithId</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-start">38 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createProductWithNameTest</span>
-                <span class="method-start">34 ms</span>
+                <span class="method-start">41 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.crm.vtiger.ProductTest.SearchProductTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">searchProductWithId</span>
-                <span class="method-start">61 ms</span>
+                <span class="method-start">48 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">searchProductWithNameTest</span>
-                <span class="method-start">66 ms</span>
+                <span class="method-start">56 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

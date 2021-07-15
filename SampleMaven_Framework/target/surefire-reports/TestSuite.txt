@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.047 sec
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.873 sec <<< FAILURE!
+createOrgTest(com.crm.vtiger.organisation.CreateOrgTest)  Time elapsed: 0.037 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.crm.vtiger.organisation.CreateOrgTest.createOrgTest(CreateOrgTest.java:21)
+
